@@ -1,4 +1,5 @@
 # spa-architecture-angular-domain
+SPA Architecture, using Angular and Domain layer
 
 ## Requirements
 
@@ -7,9 +8,9 @@
 
 ## Stack
 
-- TypeScript 2.x
-- Stylus 2.x
 - Pug 2.x
+- Stylus 2.x
+- TypeScript 2.x
 - Angular 4.3
 
 ## Contribution guide
@@ -79,7 +80,7 @@ $ npm test
 ## E2E Testing
 
 To execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `npm start`.
+Before running the tests make sure you are serving the app via `npm start`:
 
 ```sh
 $ npm e2e

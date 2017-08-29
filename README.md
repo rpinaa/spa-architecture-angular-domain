@@ -1,28 +1,98 @@
-# PublicFrontOverview
+# spa-architecture-angular-domain
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
+## Requirements
 
-## Development server
+- NodeJS +7.x
+- Angular Cli 1.x
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Stack
 
-## Code scaffolding
+- TypeScript 2.x
+- Stylus 2.x
+- Pug 2.x
+- Angular 4.3
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Contribution guide
 
-## Build
+### Remotes
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+The **remotes** follow the convention:
 
-## Running unit tests
+- _**origin**_: fork in the account of the developer
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- _**upstream**_: main repository
 
-## Running end-to-end tests
+### Building
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+For local environment:
 
-## Further help
+```sh
+$ npm start
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+For development environment:
+
+```sh
+$ npm start --environment=dev
+```
+
+For staging environment:
+
+```sh
+$ npm start --environment=stag
+```
+
+For production environment:
+
+```sh
+$ npm start --environment=prod
+```
+
+### Distributing
+
+For development environment:
+
+```sh
+$ npm build --environment=dev
+```
+
+For staging environment:
+
+```sh
+$ npm build --environment=stag
+```
+
+For production environment:
+
+```sh
+$ npm build --environment=prod
+```
+
+## Unit Testing
+
+To execute the unit tests via [Karma](https://karma-runner.github.io), run:
+
+```sh
+$ npm test
+```
+
+## E2E Testing
+
+To execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Before running the tests make sure you are serving the app via `npm start`.
+
+```sh
+$ npm e2e
+```
+
+### Exploring
+
+For local environment:
+
+Go to http://localhost:4200
+
+## License
+
+MIT
+
+**Free Software, Hell Yeah!**

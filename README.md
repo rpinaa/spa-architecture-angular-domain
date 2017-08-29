@@ -3,7 +3,7 @@ SPA Architecture, using Angular and Domain layer
 
 ## Requirements
 
-- NodeJS +7.x
+- NodeJS 7.5+
 - Angular Cli 1.x
 
 ## Stack

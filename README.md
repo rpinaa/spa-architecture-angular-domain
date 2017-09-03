@@ -1,5 +1,5 @@
-# public-overview-frontend
-SPA Architecture, using Angular and Domain layer to complete all business rules of Squint Overview
+# spa-architecture-angular-domain
+SPA Architecture, using Angular and Domain layer
 
 ## Requirements
 

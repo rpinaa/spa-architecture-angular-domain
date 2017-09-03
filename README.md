@@ -108,4 +108,4 @@ $ npm run e2e
 
 ## License
 
-Teamknowlogy
+MIT

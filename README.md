@@ -23,6 +23,26 @@ The **remotes** follow the convention:
 
 - _**upstream**_: main repository
 
+### Commit Style
+
+Please consider de following git styles for the commit messages:
+
+http://udacity.github.io/git-styleguide/
+
+### Configuring
+
+Before build, you should set:
+
+```sh
+$ npm i -g @angular/cli
+```
+
+Then you also need to set within the root file:
+
+```sh
+$ npm i
+```
+
 ### Building
 
 For local environment:
@@ -34,19 +54,19 @@ $ npm start
 For development environment:
 
 ```sh
-$ npm start --environment=dev
+$ npm run start-dev
 ```
 
 For staging environment:
 
 ```sh
-$ npm start --environment=stag
+$ npm run start-stag
 ```
 
 For production environment:
 
 ```sh
-$ npm start --environment=prod
+$ npm run start-prod
 ```
 
 ### Distributing
@@ -54,22 +74,22 @@ $ npm start --environment=prod
 For development environment:
 
 ```sh
-$ npm build --environment=dev
+$ npm run dist-dev
 ```
 
 For staging environment:
 
 ```sh
-$ npm build --environment=stag
+$ npm run dist-stag
 ```
 
 For production environment:
 
 ```sh
-$ npm build --environment=prod
+$ npm run dist-prod
 ```
 
-## Unit Testing
+### Unit Testing
 
 To execute the unit tests via [Karma](https://karma-runner.github.io), run:
 
@@ -77,23 +97,15 @@ To execute the unit tests via [Karma](https://karma-runner.github.io), run:
 $ npm test
 ```
 
-## E2E Testing
+### E2E Testing
 
 To execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 Before running the tests make sure you are serving the app via `npm start`:
 
 ```sh
-$ npm e2e
+$ npm run e2e
 ```
-
-### Exploring
-
-For local environment:
-
-Go to http://localhost:4200
 
 ## License
 
-MIT
-
-**Free Software, Hell Yeah!**
+Teamknowlogy

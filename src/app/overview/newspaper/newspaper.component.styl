@@ -1,0 +1,127 @@
+@import '~nib/index'
+@import '~jeet/styl/index'
+@import '~rupture/rupture/index'
+
+@import '../../common/styles/vars'
+
+.section
+  &__news
+    position relative
+    .new.border-right
+      &:after
+        content ''
+        width calc(100% - 15px)
+    .new
+      margin-bottom 20px
+      position relative
+      min-height 310px
+      &:after
+        content ''
+        border-bottom: 1px solid white-two;
+        width: 100%;
+        position: absolute;
+        bottom: -12px;
+
+      &__category
+        color squash
+        font-size .8em
+        font-weight bold
+        text-transform uppercase
+        margin-top 10px
+        display block
+      &__title
+        color black
+        font-size 1.2em
+        line-height 1.22
+        text-transform uppercase
+        max-width 90%
+        margin-top 10px
+      &__source
+        color warm-grey
+        font-size 0.7em
+        font-weight 600
+        position absolute
+        bottom 0
+      .container
+        &__img
+          clearfix()
+          position relative
+          height 150px
+          overflow hidden
+
+          &:before
+            content ''
+            position absolute
+            top 0
+            right 0
+            bottom 0
+            left 0
+            background linear-gradient(bottom, rgba(black,.3), rgba(black,0))
+            z-index 1
+          .new__img
+            align()
+            width auto
+            min-height 165px
+            position absolute
+
+    .new__hero
+      height calc(100% - 20px)
+
+      .new__title
+        font-size 2em
+        line-height 1.1
+        max-width 60%
+      .container
+        &__img
+          height 395px
+          +below(480px)
+            height 215px
+
+          &:before
+            content ''
+            position absolute
+            top 0
+            right 0
+            bottom 0
+            left 0
+            background linear-gradient(bottom, rgba(black,.3), rgba(black,0))
+            z-index 1
+          .new__img
+            min-height 420px
+            width 100%
+
+.top-row__news
+  display flex
+  margin-bottom 20px
+  +below(480px)
+    flex-direction column
+
+.top-row-left__news
+.top-row-right__news
+  column(1/2, $gutter:1)
+  display flex
+  flex-wrap wrap
+
+.top-row-left__news
+  +below(480px)
+    width 100%
+  .border-right
+    +below(480px)
+      padding-right 0
+      border 0
+
+.top-row-right__news
+  +below(480px)
+    display none
+  .new
+    column(1/2, $gutter:2, $cycle:2)
+.bottom-row__news
+  overflow: hidden;
+  margin: 0;
+  position relative
+  .new
+    span(1/4)
+.bottom-news
+  .swiper-slide
+    justify-content center
+    align-items center

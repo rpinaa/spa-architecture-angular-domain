@@ -1,0 +1,37 @@
+.section__title(*ngIf="pinTrend")
+  h2.title PINTEREST
+  .title__divider
+    span.divider__line--left
+    span.divider__dot
+    span.divider__dot
+    span.divider__line--right
+
+// PINTEREST
+section.section__pinterest.gradient(*ngIf="pinTrend")
+  .limit
+    h3.section__subtitle #[span.squash TOP 5] PINS
+
+    div(
+      *ngFor="let pin of pinTrend.pins; let i = index",
+      [ngClass]="{ 'p-horizontal': i <= 1, 'p-vertical': i > 1 }"
+    )
+      a.img__container(href="https://www.pinterest.com.mx/pin/{{ pin.id }}" target='_blank')
+        img.p__img(src="{{ pin.image ? pin.image : 'assets/img/no-img.jpg' }}", alt='post')
+        b.rank {{ (i + 1) | enumeration }}
+
+      .info
+        .content
+          .p__content
+            .profile-pic__container
+              img.profile__img(src="{{ pin.thumbnail ? pin.thumbnail : 'assets/img/no-img.jpg' }}", alt='Profile')
+            .profile__info
+              .rank__user
+                p.rank__username {{ pin.name }}
+          .stats
+            .top
+              .stat.stat--left
+                span.squash-txt {{ pin.likeCount | shortNumber }}
+                span Personas probaron
+              .stat.stat--right
+                span.squash-txt {{ pin.repinCount | shortNumber }}
+                span Guardaron imagen

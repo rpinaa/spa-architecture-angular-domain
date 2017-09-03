@@ -1,0 +1,152 @@
+@import '~nib/index'
+@import '~jeet/styl/index'
+@import '~rupture/rupture/index'
+
+@import '../../common/styles/vars'
+
+.section__apps
+	padding 30px 15px
+	.limit
+		clearfix()
+		.apps__container
+			clearfix()
+			width 100%
+			background white
+			padding 30px
+			border-radius 5px
+		.left
+		.right
+			width 40%
+			+below(1200px)
+				width 48%
+			+below(480px)
+				width 100%
+			.buttons
+				text-align right
+				margin-bottom 20px
+				label
+					margin-left 10px
+.btn__radio
+	display none
+	margin 10px
+
+.btn__radio + label
+	display inline-block
+	font-size .8em !important
+	padding 0 !important
+	background-color white
+	border 1px solid warm-grey
+	height 30px !important
+	line-height 30px !important
+	text-align center
+	width 80px
+	color warm-grey
+	border-radius 30px
+	&:before
+	&:after
+		display none
+
+.btn__radio:checked + label
+	background-image none
+	background-color squash
+	color white
+	border-color squash
+	text-transform uppercase
+	font-size 1em
+	box-sizing border-box
+	transition all 0.2s ease
+
+label + .btn__radio
+	margin-left 20px
+
+.app
+	&__item
+		padding 10px 0 20px 0
+		position relative
+		border-radius 5px
+		margin-bottom 10px
+		border-bottom 1px solid white-three
+		width 100%
+
+		.link
+			display flex
+			align-items center
+			.app
+				&-pic
+					align()
+					min-width 110px
+					width 100px
+
+					&__container
+						width 85px
+						height 85px
+						margin-right 40px
+						position relative
+						display inline-block
+						vertical-align top
+						border-radius 10px
+						overflow hidden
+						box-shadow 0 6px 9px 0 rgba(0, 0, 0, 0.18)
+						+below(1200px)
+							margin-right 15px
+							width 70px
+							height 70px
+						&:before
+							content ''
+							position absolute
+							top 0
+							right 0
+							bottom 0
+							left 0
+							background-image linear-gradient(top, rgba(13, 65, 133, 0.0), #215293)
+							z-index 1
+						.app__pic
+							width 100%
+
+						.rank
+							position absolute
+							color white
+							bottom 10px
+							left 10px
+							font-size 2.5em
+							font-weight 400
+							line-height 1
+							z-index 1
+							text-shadow 0 10px 9px rgba(0,0,0,0.09)
+				&__info
+					width calc(100% - 130px)
+					display inline-flex
+					.container__info
+						width 80%
+						.app
+							&__name
+								font-size 20px
+								font-weight 600
+								line-height 1.0
+								text-align left
+								color greyish-brown
+								margin 0
+								margin-bottom 5px
+							&__company
+								font-size 13px
+								font-weight 600
+								text-align left
+								color warm-grey
+								margin 0
+								line-height 1.4
+								display block
+								position relative
+								display -webkit-box
+								overflow hidden
+								text-overflow ellipsis
+								max-width 310px
+								-webkit-line-clamp 2
+								-webkit-box-orient vertical
+								left 0
+					.app__rank
+						font-size 2em
+						font-weight 800
+						text-align left
+						color black
+						width 20%
+						text-align right

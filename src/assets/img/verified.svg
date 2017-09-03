@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>verified</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="✅-overview-approved" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="overview_03d" transform="translate(-1146.000000, -4268.000000)">
+            <g id="Group-40" transform="translate(250.000000, 4161.000000)">
+                <g id="verified" transform="translate(896.000000, 107.000000)">
+                    <g>
+                        <rect id="Rectangle-19" fill="#4A90E2" x="0" y="0" width="15" height="15" rx="3"></rect>
+                        <path d="M3.35906769,7.69994491 C3.13719301,7.53554833 2.82405828,7.58214355 2.6596617,7.80401824 C2.49526513,8.02589293 2.54186035,8.33902766 2.76373504,8.50342423 L6.67539101,11.4017397 C6.89932743,11.5676639 7.21569752,11.5184632 7.3786687,11.2923686 L12.4285606,4.28650926 C12.5900313,4.06249629 12.5393308,3.75 12.3153179,3.58852926 C12.0913049,3.42705852 11.7788086,3.47775902 11.6173379,3.70177199 L6.86367689,10.2966617 L3.35906769,7.69994491 Z" id="Path-5" fill="#FAFAFA" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,379 @@
+@import '~nib/index'
+@import '~jeet/styl/index'
+@import '~rupture/rupture/index'
+
+@import '../../common/styles/vars'
+
+.trending__tweets
+  clearfix()
+  overflow hidden
+  .tweet
+    column(1/3, $gutter:1)
+    text-align center
+    max-width 460px
+    position relative
+    &-img
+      &__container
+        min-height 210px
+        position relative
+        overflow hidden
+        .tweet__img
+          align()
+          min-width 460px
+    .content
+      position relative
+      padding-top 30px
+      padding-bottom 10px
+      z-index 1
+      background white-four
+      .profile__info
+        margin-top -60px
+        .user
+          &__profile-pic
+            width 60px
+            height 60px
+            box-shadow 0 0 0 3px white
+            margin-bottom 10px
+      .user
+        font-size 18px
+        font-weight bold
+        color black
+        &__name
+        &__username
+          display inline-block
+          vertical-align middle
+        &__tweet
+          margin 40px 20px
+          .tweet__txt
+            width 100%
+            display block
+            text-align center
+            margin 0 auto
+            position relative
+            display -webkit-box
+            overflow hidden
+            text-overflow ellipsis
+            max-width 300px
+            height (14px)*(1.3)*(3)
+            font-size 14px
+            line-height 1.3
+            -webkit-line-clamp 3
+            -webkit-box-orient vertical
+            left 0
+
+        &__stats
+          clearfix()
+          .stat
+            column(1/3)
+            text-align center
+
+            &__num
+            &__txt
+              display block
+
+            &__num
+              font-size 1.1em
+              font-weight bold
+              line-height 1
+            &__txt
+              font-size .8em
+              line-height 1.25
+              color greyish-brown
+
+.trending__persons
+  clearfix()
+  +below(1300px)
+    width 100%
+    max-width 600px
+    margin 0 auto
+  .person
+    column(1/5, $gutter: .8, $cycle: 5)
+    display flex
+    margin-bottom 10px
+    +below(1300px)
+      column(1/2, $gutter: 3, $cycle: 2)
+    +below(700px)
+      column(1, $uncycle: 3)
+    .profile-pic__container
+      width 115px
+      height 115px
+      min-width 115px
+      overflow hidden
+      position relative
+
+      .profile__img
+        align()
+        width auto
+        max-height 120px
+    .content
+      display flex
+      flex-wrap wrap
+      width 100%
+      border-top solid 1px white-three
+      border-right solid 1px white-three
+      border-bottom solid 1px white-three
+      border-left 0
+      padding 10px
+      .profile__info
+        .name
+          font-size 16px
+          font-weight 600
+          color greyish-brown
+          line-height 1
+        .username
+          font-size 14px
+          font-weight 600
+          color warm-grey
+      .person__stats
+        clearfix()
+        width 100%
+        .stat
+          column(1/2)
+          text-align center
+
+          &__num
+          &__txt
+            display block
+
+          &__num
+            font-size 1.1em
+            font-weight bold
+            line-height 1
+          &__txt
+            font-size .8em
+            line-height 1.25
+            color greyish-brown
+
+.tt
+  &__list
+    clearfix()
+    width 100%
+    max-width 995px
+    margin 0 auto
+    +below(1024px)
+      font-size 0.8em
+    +below(700px)
+      max-width 300px
+    .tt__item
+      column(1/5, $gutter:.5, $cycle:5)
+      +below(700px)
+        column(1/2, $cycle: 2)
+        margin-bottom 10px
+        vertical-align middle
+
+      .link
+        font-size 1.5em
+        font-weight 600
+        text-align left
+        color greyish-brown
+        -webkit-line-clamp 1
+        -webkit-box-orient vertical
+        left 0
+        display block
+        position relative
+        display -webkit-box
+        overflow hidden
+        -o-text-overflow ellipsis
+        text-overflow ellipsis
+        word-break break-all
+        padding-right 15px
+        .sup
+          font-size .9em
+          color warm-grey
+          font-weight 200
+    .first-place
+      .link
+        font-size 2em
+        font-weight bold
+
+.section__twitter
+  clearfix()
+  padding 30px 15px
+  .limit
+    .influencers
+      clearfix()
+      max-width 1250px
+      margin 0 auto
+      .first-influencer
+        column(.27, $gutter: 1)
+        margin-bottom 15px
+        +below(1200px)
+          column(1/2)
+        +below(480px)
+          stack()
+          max-width 100%
+          max-height 200px
+          min-width 250px
+        .profile-pic__container
+          position relative
+          overflow hidden
+          height 100%
+          min-height 335px
+          +below(480px)
+            min-height 200px
+          &:before
+            content ''
+            position absolute
+            top 0
+            right 0
+            bottom 0
+            left 0
+            background linear-gradient(bottom, rgba(0, 0, 0, 0.69), rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.69))
+            z-index 1
+
+          .profile__img
+            min-height 350px
+            width auto
+            align()
+            +below(1200px)
+              min-height: auto;
+              width: 100%;
+
+            +below(768px)
+              min-height 350px
+              width auto
+
+          .content
+            position absolute
+            bottom 0
+            width 100%
+            height 100%
+            padding 15px
+            color white
+            z-index 2
+            display flex
+            align-content space-between
+            flex-wrap wrap
+            .profile__info
+              color white
+              .rank
+                display inline-block
+                vertical-align middle
+                font-size 3.7em
+                font-weight 400
+                line-height 1
+                &__user
+                  display inline-block
+                  vertical-align middle
+            .user
+              &__tweet
+                margin-bottom 10px
+                .ico-tw
+                .tweet
+                  display inline-block
+                  vertical-align middle
+                .tweet
+                  width 80%
+                  font-size 0.8em
+                  line-height 1.3
+              &__stats
+                clearfix()
+                width 100%
+                .stat
+                  column(1/3)
+                  text-align center
+                  &__num
+                  &__txt
+                    display block
+                  &__num
+                    font-size 2em
+                    font-weight bold
+                    line-height 1
+                    +below(1400px)
+                      font-size 1.5em
+                    +below(1200px)
+                      font-size 1em
+                  &__txt
+                    font-size .8em
+                    line-height 1.3
+                    font-weight 100
+
+      .second-influencer
+      .normal-influencer
+        column(.35, $gutter: 1)
+        margin-bottom 15px
+        height 160px
+        &:nth-child(2)
+          +below(1200px)
+            margin-right 0
+        &:nth-child(3)
+          +below(1200px)
+            margin-right 0
+        +below(1200px)
+          column(1/2)
+        +below(600px)
+          width 100%
+        .profile-pic__container
+          span(.3)
+          position relative
+          overflow hidden
+          height 160px
+          +below(480px)
+            min-width 50px
+          &:before
+            content ''
+            position absolute
+            top 0
+            right 0
+            bottom 0
+            left 0
+            background linear-gradient(bottom, rgba(0, 0, 0, 0.69), rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.69))
+            z-index 1
+          .rank
+            position absolute
+            color white
+            bottom 10px
+            left 10px
+            font-size 2em
+            font-weight 400
+            line-height 1
+            z-index 1
+
+          .profile__img
+            max-height 180px
+            min-height 180px
+            width auto
+            align()
+        .content
+          span(.7)
+          background white
+          padding 5px 20px
+          height 160px
+
+          +below(480px)
+            padding 5px 10px
+
+          .user__stats
+            .stat
+              column(1/3)
+              text-align center
+
+              &__num
+              &__txt
+                display block
+
+              &__num
+                font-size 1.1em
+                font-weight bold
+                line-height 1
+                color black
+              &__txt
+                font-size .8em
+                line-height 1.25
+                color greyish-brown
+
+          .user__tweet
+            .tweet
+              font-size .8em
+              line-height 1.43
+              color warm-grey
+              margin 20px 0
+          .rank
+            &__name
+              font-size 1.1em
+              font-weight 600
+              line-height 1
+              color greyish-brown
+            &__username
+              font-size .8em
+              color greyish-brown

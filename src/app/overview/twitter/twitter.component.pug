@@ -1,0 +1,133 @@
+.section__title(*ngIf='tweets && tweets.trends.length')
+  h2.title TWITTER
+  .title__divider
+    span.divider__line--left
+    span.divider__dot
+    span.divider__dot
+    span.divider__line--right
+
+section.section__twitter.gradient(*ngIf='tweets && tweets.trends.length')
+  .limit
+    // TRENDING TOPICS
+    h3.section__subtitle
+      span.squash TOP 10
+      |  TRENDING TOPICS
+    ul.tt__list(*ngIf='tweets && tweets.trends.length')
+      li.tt__item(
+        *ngFor="let trend of tweets.trends; let i = index; let first = first;",
+        [ngClass]="{ 'first-place': first }"
+      )
+        a.link(
+          *ngIf="first",
+          [href]="trend.url"
+          target='_blank'
+        )
+          span.squash-txt {{ (i + 1) | enumeration: '2' }}
+          | {{ trend.name }}
+        a.link(
+          *ngIf="!first",
+          [href]="trend.url"
+          target='_blank'
+        )
+          | {{ (i + 1) | enumeration: '2' }}
+          sup.sup #
+          | {{ trend.name | hashtag: 'true' }}
+
+    // INFLUENCERS
+    h3.section__subtitle
+      span.squash PERSONAS
+      |  QUE HABLARON DE &nbsp;
+      span.squash {{ '#' + (tweets.trends[0].name | hashtag: 'true') }}
+
+    .influencers(*ngIf="tweets")
+      // FIRST INFLUENCER
+      .first-influencer
+        .profile-pic__container
+          a(href="https://twitter.com/{{ popularUser.screenName }}" target='_blank')
+            img.profile__img(src="{{ (popularUser.profileImage ? popularUser.profileImage : 'assets/img/no-img.jpg') | normalImage }}", alt='Profile')
+            .content
+              .profile__info
+                b.rank 01
+                .rank__user
+                  p.rank__name {{ popularUser.name }}
+                  span.rank__username.squash-txt @{{ popularUser.screenName }}
+              .user__stats
+                .user__tweet
+                  img.ico-tw(src='assets/img/twitter-logo-blue.svg', alt='Twitter')
+                  p.tweet.clamp-txt-first
+                    | {{ popularUser.description }}
+                .stat.tooltipped(data-position='top', data-delay='50', data-tooltip='100,600')
+                  span.stat__num {{ popularUser.followerCount | shortNumber }}
+                  span.stat__txt Followers
+                .stat.tooltipped(data-position='top', data-delay='50', data-tooltip='10,934,239')
+                  span.stat__num {{ popularUser.retweetCount | shortNumber }}
+                  span.stat__txt Retweets
+                .stat.tooltipped(data-position='top', data-delay='50', data-tooltip='10,034,239')
+                  span.stat__num {{ popularUser.favoriteCount | shortNumber }}
+                  span.stat__txt Me gusta
+
+      // NORMAL INFLUENCERS
+      .normal-influencer(
+        *ngFor="let user of tweets.popularTrend.users; let i = index; let first = first;",
+        [ngClass]="{ 'second-influencer': first }"
+      )
+        a(href="https://twitter.com/{{ user.screenName }}" target='_blank')
+          .profile-pic__container
+            img.profile__img(src="{{ (user.profileImage ? user.profileImage : 'assets/img/no-img.jpg') | normalImage }}", alt='Profile')
+            b.rank {{ (i + 2) | enumeration: '2' }}
+          .content
+            .profile__info
+              .rank__user
+                p.rank__name {{ user.name }}
+                span.rank__username @{{ user.screenName }}
+            .user__tweet
+              p.tweet.clamp-txt-tweet
+                | {{ user.description }}
+            .user__stats
+              .stat.tooltipped(data-position='top', data-delay='50', data-tooltip='100,600')
+                span.stat__num {{ user.followerCount | shortNumber }}
+                span.stat__txt Followers
+              .stat.tooltipped(data-position='top', data-delay='50', data-tooltip='10,934,239')
+                span.stat__num {{ user.retweetCount | shortNumber }}
+                span.stat__txt Retweets
+              .stat.tooltipped(data-position='top', data-delay='50', data-tooltip='10,034,239')
+                span.stat__num {{ user.favoriteCount | shortNumber }}
+                span.stat__txt Me gusta
+
+    // INFLUENCERS
+    // TRENDING TWEETS
+    h3.section__subtitle(*ngIf="tweets")
+      span.squash TWEETS
+      |  MÁS RELEVANTES
+    .trending__tweets(*ngIf="tweets")
+      .swiper-container([swiper]="sliderConfig")
+        .swiper-wrapper
+          .tweet.swiper-slide(*ngFor="let tweet of tweets.popularTrend.tweets")
+            .tweet-img__container
+              a(href="https://twitter.com/{{ tweet.screenName }}/status/{{ tweet.id }}" target='_blank')
+                img.tweet__img(src="{{ (tweet.bannerImage ? tweet.bannerImage : 'assets/img/no-img.jpg') | normalImage }}", alt='imagen tweet')
+            .content
+              .profile__info
+                a(href="https://twitter.com/{{ tweet.screenName }}/status/{{ tweet.id }}" target='_blank')
+                  img.user__profile-pic(src="{{ (tweet.profileImage ? tweet.profileImage : 'assets/img/no-img.jpg') | normalImage }}", alt='Profile pic')
+                .user
+                  p.user__name {{ tweet.name }}
+                  hr.vr
+                  span.user__username.warm-grey-txt @{{ tweet.screenName }}
+              .user__tweet
+                p.tweet__txt {{ tweet.description }}
+              .user__stats
+                .stat.tooltipped(data-position='top', data-delay='50', data-tooltip='100,600')
+                  span.stat__num {{ tweet.followerCount | shortNumber }}
+                  span.stat__txt Comentarios
+                .stat.tooltipped(data-position='top', data-delay='50', data-tooltip='10,934,239')
+                  span.stat__num {{ tweet.retweetCount | shortNumber }}
+                  span.stat__txt Retweets
+                .stat.tooltipped(data-position='top', data-delay='50', data-tooltip='10,034,239')
+                  span.stat__num {{ tweet.favoriteCount | shortNumber }}
+                  span.stat__txt Me gusta
+            .shadow
+        .tweets__controls.controls
+          .swiper-button-prev
+          .swiper-pagination
+          .swiper-button-next

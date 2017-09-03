@@ -1,0 +1,45 @@
+.section__title(*ngIf="popularVideo")
+  h2.title YOUTUBE
+  .title__divider
+    span.divider__line--left
+    span.divider__dot
+    span.divider__dot
+    span.divider__line--right
+
+section.section__youtube.gradient(*ngIf="popularVideo")
+  .limit
+
+    h3.section__subtitle #[span.squash TOP 5] VIDEOS
+
+    .hero-video__container
+      iframe.hero-video([src]="getSanitizerURL(popularVideo.id)", frameborder='0', allowfullscreen)
+      .video__content
+        .info
+          h2.video__title {{ popularVideo.channelTitle }} - {{ popularVideo.title }}
+          a.video__channel(href='#!') TRI-LINE
+            img.ico-verified(src='assets/img/verified.svg', alt='verified')
+          .stats
+            .stat.stat--big
+              span.squash-txt {{ popularVideo.viewCount | shortNumber }} #[span.black-text vistas]
+            .stat.likes
+              span #[i.squint-ico.i-like] {{ popularVideo.likeCount | shortNumber }}
+              span #[i.squint-ico.i-dislike] {{ popularVideo.dislikeCount | shortNumber }}
+            small.stat.time #[span {{ popularVideo.publishedAt | timeAgo }}]
+
+    div(*ngIf="videoTrend && videoTrend.videos.length")
+      .normal-video(*ngFor="let video of videoTrend.videos")
+        .img-video__container
+          a(href="https://www.youtube.com/watch?v={{ video.id }}", target='_blank')
+            img.video__img(src="{{ video.standardThumbnail ? video.standardThumbnail : video.defaultThumbnail ? video.defaultThumbnail : 'assets/img/no-img.jpg' }}", alt='Video')
+        .video__content
+          .info
+            h2.video__title {{ video.channelTitle }} - {{ video.title }}
+            a.video__channel(href='#!') TRI-LINE&nbsp;
+              img.ico-verified(src='assets/img/verified.svg', alt='verified')
+          .stats
+            .stat.stat--normal
+              span.squash-txt {{ video.viewCount | shortNumber }} #[span.black-text vistas]
+            .stat.likes
+              span #[i.squint-ico.i-like] {{ video.likeCount | shortNumber }}
+              span #[i.squint-ico.i-dislike] {{ video.dislikeCount | shortNumber }}
+            small.stat.time #[span {{ video.publishedAt | timeAgo }}]

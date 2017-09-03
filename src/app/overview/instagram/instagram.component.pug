@@ -1,0 +1,31 @@
+.section__title(*ngIf="postTrend")
+  h2.title INSTAGRAM
+  .title__divider
+    span.divider__line--left
+    span.divider__dot
+    span.divider__dot
+    span.divider__line--right
+
+section.section__instagram.gradient(*ngIf="postTrend")
+
+  .limit
+    h3.section__subtitle #[span.squash TOP 5] POST
+
+    div(
+      *ngFor="let post of postTrend.posts; let i = index",
+      [ngClass]="{ 'p-horizontal': i <= 1, 'p-vertical': i > 1 }"
+    )
+      a.img__container(href="https://www.instagram.com/p/{{ post.code }}" target='_blank')
+        img.p__img(src="{{ post.thumbnail ? post.thumbnail : 'assets/img/no-img.jpg' }}")
+        b.rank {{ (i +1) | enumeration }}
+      .info
+        .content
+          .stats
+            .top
+              .stat.stat--left
+                span.squash-txt {{ post.commentCount | shortNumber }}
+                span Comentarios
+              .stat.stat--right
+                span.squash-txt {{ post.likeCount | shortNumber }}
+                span Me gusta
+            small.stat.time.right #[span {{ (post.date * 1000) | timeAgo }}]

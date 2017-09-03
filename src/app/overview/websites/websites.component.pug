@@ -1,0 +1,41 @@
+// TITLE
+.section__title
+  h2.title RANKING WEB
+    .title__divider
+      span.divider__line--left
+      span.divider__dot
+      span.divider__dot
+      span.divider__line--right
+        
+// RANKING WEB
+section.section__ranking-web.gradient
+  .limit
+    h3.section__subtitle #[span.squash TOP 10] WEBSITES
+    
+    .ranking__container.table__ranking-web
+      table.responsive-table.bordered.centered
+        thead
+          tr
+            th.title #[span.hide-on-large-only RANKING]
+            th.title #[span.hide-on-large-only FAVICON]
+            th.title SITIO
+            th.title PROMEDIO PERMANENCIA
+            th.title PROMEDIO PÁGINAS VISITADAS
+        tbody
+          - for (var x = 1; x <= 10; x++)
+            tr
+              td.rank #{x == 10 ? 10 : '0' + x}
+              td
+                img.favicon(src='assets/img/favicon.jpg', alt='favicon')
+              td.site.left-align Google #[span.site__url http://www.google.com]
+              td.number 7.53
+              td.number 8.10
+    
+    .search__preview
+      img.preview__img(src='assets/img/preview-pic.jpg', alt='Web')
+      .preview__content
+        span.rank 01
+        .site
+          span.name Google
+          a.btn.btn--round.btn--outline.white(href='http://www.google.com', target='_blank') VISITAR
+          

@@ -19,15 +19,20 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "../node_modules/materialize-css/dist/css/materialize.css",
         "styles.styl"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/hammerjs/hammer.js",
+        "../node_modules/materialize-css/dist/js/materialize.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "local": "environments/environment.ts",
-        "dev": "environments/environment.development.ts",
-        "stag": "environments/environment.staging.ts",
-        "prod": "environments/environment.production.ts"
+        "dev": "environments/environment.dev.ts",
+        "stag": "environments/environment.stag.ts",
+        "prod": "environments/environment.prod.ts"
       }
     }
   ],

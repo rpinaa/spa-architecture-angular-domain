@@ -1,0 +1,108 @@
+@import '~nib/index'
+@import '~jeet/styl/index'
+@import '~rupture/rupture/index'
+
+@import '../../common/styles/vars'
+
+.section__ranking-web
+	padding 30px 15px
+	.limit
+		clearfix()
+
+.table__ranking-web
+	background white
+	padding 30px
+	width calc(100% - 410px)
+	max-width 840px
+	display inline-block
+	vertical-align middle
+	border-radius 10px
+	box-shadow 0 14px 30px 0 rgba(0,0,0,0.03)
+	+below(1000px)
+		max-width 100%
+		width 100%
+
+	table.bordered>thead>tr
+		border-bottom 1px solid white
+	table.bordered>tbody>tr
+		border-bottom 1px solid white-two
+	.left-align
+		text-align left !important
+	.favicon
+		max-width 32px
+	.site
+		font-size 1.1em
+		font-weight bold
+		color black
+		&__url
+			display block
+			font-size .8em
+			font-weight 200
+			color warm-grey
+	.title
+		font-size .8em
+		font-weight bold
+		color greyish-brown
+	.number
+	.rank
+		font-size 1.3em
+		font-weight bold
+		color black
+.search__preview
+	clearfix()
+	position relative
+	overflow hidden
+	width 400px
+	height 550px
+	display inline-block
+	vertical-align middle
+	padding 20px
+	margin-left -3px
+	+below(1000px)
+		display none
+	&:before
+		content ''
+		position absolute
+		top 0
+		right 0
+		bottom 0
+		left 0
+		background-image linear-gradient(top, rgba(13, 65, 133, 0.0), rgba(5, 21, 43, 0.82))
+		z-index 1
+	.preview__img
+		align()
+		min-height 350px
+		width auto
+	.preview__content
+		position absolute
+		bottom 20px
+		z-index 1
+		.rank
+			font-size 120px
+			letter-spacing -7.4px
+			text-align center
+			color white
+			display inline-block
+			vertical-align middle
+		.site
+			width 240px
+			display inline-block
+			vertical-align middle
+			.name
+				font-size 20px
+				font-weight bold
+				text-align left
+				color white
+				display block
+				margin-bottom 10px
+			.btn
+				font-size 14px
+				font-weight bold
+				text-align center
+				color white
+				width 120px
+				background-color rgba(0,0,0,0) !important
+				border 1px solid white
+
+
+		

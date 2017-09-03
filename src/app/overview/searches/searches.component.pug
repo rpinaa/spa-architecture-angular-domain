@@ -1,0 +1,37 @@
+.section__title(*ngIf="searchTrend")
+  h2.title TENDENCIAS DE BÚSQUEDA
+  .title__divider
+    span.divider__line--left
+    span.divider__dot
+    span.divider__dot
+    span.divider__line--right
+
+section.section__search-trends.gradient(*ngIf="searchTrend")
+  .limit
+    h3.section__subtitle #[span.squash TOP 10] TEMAS POPULARES
+    .limit__search
+      .search__date
+        time.date {{ currentDate | date:'medium' }}
+        hr.date__hr
+
+      .search__items
+        .left
+          .search__item(*ngFor="let search of leftSearches; let i = index")
+            a.link([href]="search.link" target='_blank')
+              .search-pic__container
+                img.search__pic(src="{{ search.image ? search.image : 'assets/img/no-img.jpg' }}", alt='Trend')
+                b.rank {{ (i + 1) | enumeration: '2' }}
+              .search__info
+                h3.search__title {{ search.source }} - {{ search.title }}
+                span.search__searches.squash-txt + de {{ search.traffic | shortNumber }} búsquedas
+                p.search__txt {{ search.description }}
+        .right
+          .search__item(*ngFor="let search of rightSearches; let i = index")
+            a.link([href]="search.link" target='_blank')
+              .search-pic__container
+                img.search__pic(src="{{ search.image ? search.image : 'assets/img/no-img.jpg' }}", alt='Trend')
+                b.rank {{ (i + 6) | enumeration: '2' }}
+              .search__info
+                h3.search__title {{ search.source }} - {{ search.title }}
+                span.search__searches.squash-txt + de {{ search.traffic | shortNumber }} búsquedas
+                p.search__txt {{ search.description }}

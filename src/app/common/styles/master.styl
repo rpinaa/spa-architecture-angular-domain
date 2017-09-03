@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+@import 'nib'
+@import 'jeet'
+@import 'rupture'
+@import 'vars'
+@import 'fonts'
+@import 'helpers'
+@import 'tooltip'
+
+reset-html5()
+
+*
+	margin 0
+
+html
+body
+	height 100%
+	font-family 'Open sans'
+
+.browserupgrade
+	margin 0.2em 0
+	background #ccc
+	color #000
+	padding 0.2em 0
+
+.page-wrap
+	min-height 100%
+	margin-bottom -(footer-height)
+	&:after
+		content ""
+		display block
+
+.footer
+.page-wrap:after
+	height footer-height
+
+.footer
+	background orange
+
+.section
+	&__subtitle
+		font-size 24px
+		font-weight bold
+		line-height 1.5
+		text-align left
+		color black
+		+below(600px)
+			font-size 14px
+		.squash
+			color squash
+.material-tooltip
+	color black
+	font-size .8em
+	font-weight bold
+
+.backdrop
+	background-color white
+	color black
+
+// components
+@import 'components/*.styl'
+
+// sections
+@import 'sections/*.styl'

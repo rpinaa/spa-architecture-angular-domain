@@ -1,0 +1,65 @@
+.page-wrap
+  header
+
+    // NAV
+    nav.white.black-text.navbar-fixed.z-depth-0
+      .nav-wrapper.limit
+        a.brand-logo(href='index.html')
+          img(src='assets/img/logo-squint.svg', alt='Squint')
+        ul#nav-mobile.right
+          li.hide-on-small-only
+            a.black-text(href='#!') ¿Qué es squint?
+          li
+            a(href='#!')
+              img.ico-search(src='assets/img/search.svg', alt='search')
+          li.hide-on-small-only
+            a.waves-effect.waves-light.btn-flat.btn--outline Inicia Sesión
+          li.hide-on-small-only
+            a.waves-effect.waves-light.btn-flat.btn--round.amber.accent-4.white-text Regístrate
+          li
+            a.dropdown-button.button__lang.black-text(href='#!', data-activates='dropdownLang') ES
+            ul#dropdownLang.dropdown-content
+              li
+                a(href='#!') ES
+              li
+                a(href='#!') EN
+          li.hide-on-med-and-up
+            a.button__mobile-nav.black-text(href='#!', data-activates='slide-out')
+              i.material-icons menu
+      .circles__container
+        span.circle-deco--left
+        span.circle-deco--right
+
+    // MOBILE NAV
+    ul#slide-out.side-nav
+      li
+        a(href='') ¿Qué es Squint?
+      li
+        a.waves-effect.waves-light.btn-flat.btn--outline.center-align Inicia Sesión
+      li
+        a.waves-effect.waves-light.btn-flat.btn--round.amber.accent-4.white-text.center-align Regístrate
+    // /MOBILE NAV
+
+  section.section__vistazo
+    .limit
+      h2.title
+        | Echa un
+        b.white-text vistazo
+        |  a
+      .input-field-container
+        .input-field
+          input#autocomplete-input.autocomplete(
+            type="text",
+            contenteditable="true",
+            placeholder="México",
+            materialize="autocomplete",
+            [materializeParams]="[autocomplete]"
+          )
+
+  app-newspaper([country]="country")
+  app-twitter
+  app-cta
+  app-youtube
+  app-instagram
+  app-pinterest
+  app-searches

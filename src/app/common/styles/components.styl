@@ -1,0 +1,81 @@
+//swiper component
+
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev
+  background-image url("assets/img/circle-arrow-right.svg")
+  display inline-block
+  vertical-align middle
+  right unset
+  left 10px
+  position relative
+
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next
+  background-image url("assets/img/circle-arrow-left.svg")
+  display inline-block
+  vertical-align middle
+  left unset
+  right 10px
+  position relative
+
+.controls
+  position relative
+  text-align center
+  margin-top 20px
+
+  .swiper-pagination
+    position relative
+    display inline-block
+    vertical-align middle
+    text-align center
+    transition 0.3s
+    transform translate3d(0, 0, 0)
+    z-index 10
+
+  .swiper-pagination-bullets .swiper-pagination-bullet
+    margin 0 5px
+
+  .swiper-pagination-clickable .swiper-pagination-bullet
+    cursor pointer
+
+  .swiper-pagination-bullet
+    width 8px
+    height 8px
+    display inline-block
+    border-radius 100%
+    background #000
+    opacity .2
+
+  .swiper-pagination-bullet-active
+    opacity 1
+    background squash
+
+  .swiper-button-next
+  .swiper-button-prev
+    margin-top 0
+    width 30px
+    height 30px
+    background-size 100%
+
+.section__vistazo
+  .autocomplete-content
+    position absolute
+    +below(480px)
+      width 100%
+    li
+      >span
+        color black
+        font-weight 200
+      .highlight
+        color #f7a43d
+        font-weight bold
+  .input-field
+
+    .prefix
+      font-style normal
+      &.active
+        color macaroni-and-cheese
+
+  input[type=text]
+    &:not(.browser-default)
+      &:focus:not([readonly])
+        border-bottom 1px solid macaroni-and-cheese
+        box-shadow 0 1px 0 0 macaroni-and-cheese

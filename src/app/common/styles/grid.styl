@@ -1,0 +1,274 @@
+.p-vertical
+	span(1/3, $cycle: 3)
+	// height 540px
+	// display flex
+	padding-bottom 20px
+	// border-bottom 1px solid white-two
+	+below(1200px)
+		font-size .8em
+	+below(480px)
+		stack()
+		display flex
+		padding-bottom 10px
+		margin-bottom 10px
+		border-bottom 1px solid white-two
+	& + &
+		border-left 1px solid white-two
+		+below(480px)
+			border-left 0
+
+	.img__container
+	.info
+		stack()
+		+below(480px)
+			unstack()
+			span(1/2)
+			max-width auto
+	.img__container
+		position relative
+		overflow hidden
+		height 100%
+		max-width 340px
+		max-height 340px
+		min-height 340px
+		+below(1200px)
+			max-height 170px
+			min-height 170px
+			max-width 170px
+		&:before
+			content ''
+			position absolute
+			top 0
+			right 0
+			bottom 0
+			left 0
+			background-image linear-gradient(top, rgba(13, 10, 26, 0.0), #0d0921)
+			z-index 1
+		.p__img
+			min-height 320px
+			width auto
+			align()
+			+below(1200px)
+				min-height auto
+				width calc(100% + 10px)
+		.rank
+			position absolute
+			color white
+			bottom 10px
+			left 10px
+			font-size 5em
+			font-weight 400
+			line-height 1
+			z-index 1
+			text-shadow 0 10px 9px rgba(0, 0, 0, 0.09)
+			+below(480px)
+				font-size 3em
+	.info
+		background white
+		position relative
+		height 240px
+		max-width 340px
+		padding 10px
+		+below(1200px)
+			height auto
+			padding 5px
+
+		.content
+			align()
+			max-width 240px
+			width 90%
+			+below(1200px)
+				top auto
+				left auto
+				position relative
+				transform translate(0, 0)
+				margin 0 auto
+				max-width 170px
+			+below(480px)
+				align()
+			.p__content
+				margin-bottom 20px
+				.profile-pic__container
+				.profile__info
+					display inline-block
+					vertical-align middle
+				.profile__info
+					.rank
+						&__username
+							font-size 1.35em
+							// max-width 145px
+							// overflow hidden
+							// text-overflow ellipsis
+							// line-height 1.5
+							// -webkit-box-orient vertical
+							// -webkit-line-clamp 1
+							// height 32px
+							// word-break break-all
+
+						&__followers
+							font-size .9em
+							.squash-txt
+								font-size 1.1em
+								font-weight bold
+				.profile-pic__container
+					width 80px
+					height 80px
+					overflow hidden
+					border-radius 50%
+					margin-right 3%
+					position relative
+					+below(1200px)
+						width 30px
+						height 30px
+
+					.profile__img
+						width 100%
+			.stats
+				text-align center
+				clearfix()
+				.top
+					clearfix()
+					margin-bottom 10px
+					.stat
+						column(1/2)
+						span
+							display block
+							width 100%
+							font-weight bold
+							font-size .8em
+							line-height 1
+							padding 0 10px
+							+below(480px)
+								padding 0 10px
+							&.squash-txt
+								font-size 1.8em
+								line-height 1.2
+								margin-bottom 5px
+					.stat + .stat
+						border-left 1px solid white-two
+
+				.time
+					column(1/2)
+					display block
+					font-size .8em
+					font-weight normal
+					color warm-grey
+					margin-top 10px
+					span
+						font-weight bold
+						line-height 1
+
+.p-horizontal
+	column(1/2, $cycle: 3)
+	height 340px
+	display flex
+	padding-bottom 20px
+	border-bottom 1px solid white-two
+	margin-bottom 20px
+	+below(1200px)
+		height 190px
+		font-size 0.8em
+	+below(480px)
+		stack()
+		display flex
+	.img__container
+	.info
+		span(1/2)
+	.img__container
+		position relative
+		overflow hidden
+		height 100%
+		&:before
+			content ''
+			position absolute
+			top 0
+			right 0
+			bottom 0
+			left 0
+			background-image linear-gradient(top, rgba(13, 10, 26, 0.0), #0d0921)
+			z-index 1
+		.p__img
+			min-height 360px
+			width auto
+			align()
+			+below(1200px)
+				min-height auto
+				width calc(100% + 10px)
+		.rank
+			position absolute
+			color white
+			bottom 10px
+			left 10px
+			font-size 5em
+			font-weight 400
+			line-height 1
+			z-index 1
+			text-shadow 0 10px 9px rgba(0, 0, 0, 0.09)
+			+below(480px)
+				font-size 3em
+	.info
+		background white
+		position relative
+		.content
+			align()
+			max-width 240px
+			width 90%
+			.p__content
+				margin-bottom 20px
+				.profile-pic__container
+				.profile__info
+					display inline-block
+					vertical-align middle
+				.profile__info
+					.rank
+						&__username
+							font-size 1.35em
+						&__followers
+							font-size .9em
+							.squash-txt
+								font-size 1.1em
+								font-weight bold
+
+				.profile-pic__container
+					width 80px
+					height 80px
+					overflow hidden
+					border-radius 50%
+					margin-right 3%
+					position relative
+
+					+below(1200px)
+						width 30px
+						height 30px
+					.profile__img
+						width 100%
+			.stats
+				text-align center
+				clearfix()
+				.top
+					clearfix()
+					margin-bottom 10px
+					.stat
+						column(1/2)
+						span
+							display block
+							width 100%
+							font-weight bold
+							font-size .8em
+							line-height 1
+							padding 0 10px
+							&.squash-txt
+								font-size 1.8em
+								line-height 1.2
+								margin-bottom 5px
+					.stat + .stat
+						border-left 1px solid white-two
+
+				.time
+					column(1/2)
+					display block
+					font-size .8em
+					font-weight normal
+					color warm-grey
+					span
+						font-weight bold

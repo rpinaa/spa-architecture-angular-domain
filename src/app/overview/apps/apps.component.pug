@@ -1,0 +1,54 @@
+// TITLE
+.section__title
+  h2.title APPS MÓVILES
+  .title__divider
+    span.divider__line--left
+    span.divider__dot
+    span.divider__dot
+    span.divider__line--right
+      
+// APPS
+section.section__apps.gradient
+  .limit
+    
+    // APPS GOOGLE PLAY
+    .left
+      h3.section__subtitle #[span.squash APPS] EN GOOGLE PLAY
+      .apps__container
+        .buttons
+          input.btn__radio(type='radio', name='g-apps', id='g-free', checked='true')
+          label(for='g-free') GRATIS
+          input.btn__radio(type='radio', name='g-apps', id='g-pay')
+          label(for='g-pay') PAGA
+        - for (var x = 1; x <= 5; x++)
+          .app__item
+            a.link(href='#!')
+              .app-pic__container
+                img.app__pic(src='assets/img/app-pic.jpg', alt='App')
+                b.rank 0#{x}
+              .app__info
+                .container__info
+                  h3.app__name Sarahah
+                  h4.app__company De ZainAlabdin Tawfiq
+                span.app__rank #[i.squint-ico.i-star.squash-txt] 5.0 
+    
+    // APPS APPLE STORE 
+    .right
+      h3.section__subtitle #[span.squash APPS] EN APPLE STORE
+      .apps__container
+        .buttons
+          input.btn__radio(type='radio', name='a-apps', id='a-free', checked='true')
+          label(for='a-free') GRATIS
+          input.btn__radio(type='radio', name='a-apps', id='a-pay')
+          label(for='a-pay') PAGA
+        - for (var x = 1; x <= 5; x++)
+          .app__item
+            a.link(href='#!')
+              .app-pic__container
+                img.app__pic(src='assets/img/app-pic.jpg', alt='App')
+                b.rank 0#{x}
+              .app__info
+                .container__info
+                  h3.app__name Sarahah
+                  h4.app__company De ZainAlabdin Tawfiq
+                span.app__rank #[i.squint-ico.i-star.squash-txt] 5.0 

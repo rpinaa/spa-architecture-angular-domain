@@ -1,10 +1,64 @@
 doctype html
-html(lang='en')
-  head
-    meta(charset='utf-8')
-    title PublicFrontOverview
-    base(href='/')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='icon', type='image/x-icon', href='favicon.ico')
-  body
-    app-root
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+
+  title Squint
+
+  meta(name='description', content='')
+  meta(name='author', content='Teamknowlogy')
+  meta(name='viewport', content='initial-scale=1.0, width=device-width, maximum-scale=1.0')
+  meta(name='apple-mobile-web-app-capable', content='yes')
+
+  link(href='favicon.ico?v=5', rel='shortcut icon')
+  link(href='assets/img/apple-touch-icon.png', rel='apple-touch-icon')
+  link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+  link(href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/css/swiper.min.css', rel='stylesheet')
+
+body
+  app-root
+  // FOOTER
+  footer.page-footer.bg-brownish-grey
+    .limit
+      .row
+        .col.s12.m3.l3
+          figure.logo-squint
+            img(src='assets/img/logo-squint.svg', alt='Squint')
+        .col.s12.m3.l3
+          h5.black-text.title Legales
+          ul.footer__list
+            li
+              a.black-text.text-lighten-3.link(href='#!') Políticas de privacidad
+            li
+              a.black-text.text-lighten-3.link(href='#!') Términos y condiciones de uso
+            li
+              a.black-text.text-lighten-3.link(href='#!') Formas de pago
+        .col.s12.m3.l3
+          h5.black-text.title Ayuda
+          ul.footer__list
+            li
+              a.black-text.text-lighten-3.link(href='#!') Preguntas frecuentes
+            li
+              a.black-text.text-lighten-3.link(href='#!') Ayuda
+            li
+              a.black-text.text-lighten-3.link(href='#!') Contáctanos
+            li
+              a.black-text.text-lighten-3.link(href='#!') Mapa del sitio
+        .col.s12.m3.l3
+          h5.black-text.title Acerca de Squint
+          ul.footer__list
+            li
+              a.black-text.text-lighten-3.link(href='#!') Blog
+            li
+              a.black-text.text-lighten-3.link(href='#!') Facebook Squint
+            li
+              a.black-text.text-lighten-3.link(href='#!') Twitter Squint
+            li
+              a.black-text.text-lighten-3.link(href='#!') Prensa
+    .circles__container
+      span.circle-deco--left
+      span.circle-deco--right
+    .footer-copyright
+      .container.center-align.black-text
+        | Copyright © 2017  Squint. Todos los derechos reservados.
+  // /FOOTER

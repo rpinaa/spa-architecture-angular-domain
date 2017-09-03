@@ -1,0 +1,49 @@
+.section__title(*ngIf="popularNew && country")
+  h2.title NOTICIAS
+  .title__divider
+    span.divider__line--left
+    span.divider__dot
+    span.divider__dot
+    span.divider__line--right
+  h3.subtitle
+    | DESTACADAS EN&nbsp;
+    span.yellow-text {{ country.n }}
+
+section.section__news.limit(*ngIf="popularNew")
+  .top-row__news
+
+    .top-row-left__news
+      article.new.new__hero.border-right
+        a([href]="popularNew.url" target='_blank')
+          .container__img
+            img.new__img(src="{{ popularNew.image ? popularNew.image : 'assets/img/no-img.jpg' }}", alt='New')
+        small.new__category {{ popularNew.title }}
+        h2.new__title.clamp-txt-title {{ popularNew.description }}
+        span.new__source {{ popularNew.date | timeAgo }} | {{ popularNew.newspaper }}
+
+    .top-row-right__news(*ngIf="secondaryNews.length")
+      article.new(
+        *ngFor="let new of secondaryNews; let even = even",
+        [ngClass]="{ 'border-right': even }"
+      )
+        a([href]="new.url" target='_blank')
+          .container__img
+            img.new__img(src="{{ new.image ? new.image : 'assets/img/no-img.jpg' }}", alt='New')
+        small.new__category {{ new.title }}
+        h2.new__title.clamp-txt-3 {{ new.description }}
+        span.new__source {{ new.date | timeAgo }} | {{ new.newspaper }}
+
+  .bottom-row__news.bottom-news(*ngIf="news.length")
+    .swiper-container([swiper]="sliderConfig")
+      .swiper-wrapper
+        article.new.swiper-slide(*ngFor="let new of news")
+          a([href]="new.url" target='_blank')
+            .container__img
+              img.new__img(src="{{ new.image ? new.image : 'assets/img/no-img.jpg' }}", alt='New')
+          small.new__category {{ new.title }}
+          h2.new__title.clamp-txt-3 {{ new.description }}
+          span.new__source {{ new.date | timeAgo }} | {{ new.newspaper }}
+      .bottom-news__controls.controls
+        .swiper-button-prev
+        .swiper-pagination
+        .swiper-button-next

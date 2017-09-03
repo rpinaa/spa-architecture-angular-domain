@@ -109,3 +109,5 @@ $ npm run e2e
 ## License
 
 MIT
+
+Free Software, Hell Yeah!
